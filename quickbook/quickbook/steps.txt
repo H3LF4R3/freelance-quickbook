@@ -1,0 +1,27 @@
+1. https://quickbooks.intuit.com/choose-country/
+2. Europe
+3. Finland
+4. Free 30 Day trial
+5. Free 30 Day trial
+6. Singup ( 	Email address 	- from quickbooks.csv randomchar-dougrussell416@gmail.com 
+		From Name	- from content.csv
+		Last Name	- from content.csv
+		Phone		- "042"&RandomNumber.Value(1111111,9999999)
+		Password	- Chr(RandomNumber.Value(65, 90))&fname&lname&RandomNumber.Value(100,900)&"@" )
+7. this will open : https://app.qbo.intuit.com/app/gtkm/setup#/rowFlow/businessOverview
+8. https://app.qbo.intuit.com/app/accountsettings - open this in new tab. on succesful opening close initial tab.
+9. Click company name. ( 	Company Name - Fromname column in content.csv 
+				Save )
+10.Click contact info. ( 	Company Email - Fromemail column in content.csv 
+				Company Phone - Static Variable ex . 18888888888
+				Save )
+11. Click Sales.
+12. Click Messages	( 	Email message- Emailmessage column in content.csv 
+				Save )
+13.Click Advanced
+14.Click Currency	( 	Change EUR to USD from drop down 
+				Save )
+15. Click Done
+16. open https://app.qbo.intuit.com/app/sales in new tab. close initial tab.
+17. Create Invoice
+18.
