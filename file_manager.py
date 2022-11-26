@@ -19,10 +19,11 @@ def get_unique_email_to_send():
         with open('./DATA/email_sent.csv', 'r', encoding='utf8', newline='') as f2:
             reader = csv.reader(f)
             reader2 = csv.reader(f2)
-            _= list(map(lambda x: x[0], reader2))
+            _ = list(map(lambda x: x[0] if len(x) else '', reader2))
+
             [emails.extend(i) for i in reader]
-            emails= list(set(emails) - set(_))
-            emails=list(filter(lambda x: len(x.strip()), emails))
+            emails = list(set(emails) - set(_))
+            emails = list(filter(lambda x: len(x.strip()), emails))
 
     return emails[0]
 
@@ -64,7 +65,7 @@ def get_company_email():
     with open('./DATA/content.csv', 'r', encoding='utf8', newline='') as f:
         reader = csv.reader(f)
         names = list(filter(lambda x: len(x.strip()),
-                     map(lambda x: x[3], reader)))
+                     map(lambda x: x[3], reader)))[1:]
 
     random.shuffle(names)
     return names[0]
@@ -82,8 +83,8 @@ def get_email_message():
 
 
 def set_email_done(email):
-    with open('./DATA/email_sent.csv', 'a') as f:
-        csv.writer(f).writerow([email])
+    with open('./DATA/email_sent.csv', 'a', newline='') as f:
+        csv.writer(f).writerow([email, ])
 
 
 if __name__ == '__main__':

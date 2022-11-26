@@ -200,6 +200,8 @@ class Browser:
                 type = By.CLASS_NAME
             elif type == "xpath":
                 type = By.XPATH
+            elif type == "css":
+                type = By.CSS_SELECTOR
 
             return WebDriverWait(self.wd, time).until(
                 EC.presence_of_element_located((type, element))
